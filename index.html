@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player_Vova — ПивоМен</title>
+    <title>Player_Vova - ПивоМен</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f0f2f5;
-            --card-bg: #ffffff;
-            --text-primary: #1e1e2f;
-            --text-secondary: #555555;
-            --accent: #6c5ce7;
-            --accent-hover: #5a4bcf;
-            --border-light: #dddddd;
-            --pixel-shadow: #c0c0c0;
+            --bg-color: #141311;
+            --card-bg: rgba(83, 55, 0, 0.85);
+            --text-primary: #ffe592;
+            --text-secondary: #ffffff;
+            --accent: #e9b700;
+            --accent-hover: #bb9300;
+            --border-light: #ffda00;
+            --pixel-shadow: #2f2a22;
         }
         * {
             margin: 0;
@@ -25,7 +26,7 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Shantell Sans', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-primary);
             min-height: 100vh;
@@ -34,7 +35,32 @@
             justify-content: center;
             padding: 20px;
             line-height: 1.5;
+            position: relative;
+            overflow-x: hidden;
         }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to right, rgba(90, 70, 0, 1) 4px, transparent 1px),
+                linear-gradient(to bottom, rgba(90, 70, 0, 1) 4px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0;
+            pointer-events: none;
+            z-index: -1;
+            animation: moveGrid 1s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
         .game-card {
             max-width: 700px;
             width: 100%;
@@ -44,10 +70,12 @@
             box-shadow: 8px 8px 0 var(--pixel-shadow);
             padding: 40px 35px;
             transition: 0.2s;
+            position: relative;
         }
         .game-card:hover {
             box-shadow: 12px 12px 0 var(--pixel-shadow);
         }
+
         h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -174,10 +202,11 @@
         <h1>ПивоМен</h1>
         <div class="subhead">пиксельная драка в стиле Undertale</div>
         <div class="requirements">
-            <div class="req-item"><strong>ОС</strong> Windows / macOS / Linux</div>
-            <div class="req-item"><strong>Python</strong> 3.7.6+ (64-bit)</div>
-            <div class="req-item"><strong>ОЗУ</strong> от 512 МБ</div>
-            <div class="req-item"><strong>Место</strong> 30.8 МБ</div>
+            <div class="req-item"><strong>ОС</strong>Windows / macOS / Linux</div>
+            <div class="req-item"><strong>Python</strong>3.7.6+ (64-bit)</div>
+            <div class="req-item"><strong>ОЗУ</strong>от 512 мб</div>
+            <div class="req-item"><strong>Место</strong>30.8 мб</div>
+            <div class="req-item"><strong>Загрузка</strong>Google Drive</div>
         </div>
         <a href="https://drive.google.com/uc?export=download&id=1sOjNRvNf2lZhhy4dZj7TPldDlp242SdQ" class="download-btn" download>Скачать на пк</a>
         <div class="file-info">Архив game.zip • 30.8 МБ</div>
