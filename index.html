@@ -179,7 +179,7 @@
             <div class="req-item"><strong>ОЗУ</strong> от 512 МБ</div>
             <div class="req-item"><strong>Место</strong> 30.8 МБ</div>
         </div>
-        <a href="https://disk.yandex.ru/d/-HohDmG68ja4bA" download class="download-btn">Скачать на пк</a>
+        <a href="https://drive.google.com/uc?export=download&id=1sOjNRvNf2lZhhy4dZj7TPldDlp242SdQ" class="download-btn" download>Скачать на пк</a>
         <div class="file-info">Архив game.zip • 30.8 МБ</div>
         <div class="author">
             <div class="author-name">
@@ -187,56 +187,9 @@
             </div>
             <div class="author-nick">Player_Vova</div>
         </div>
-
         <div class="footer">
             © 2026 — бесплатная игра
         </div>
     </div>
 </body>
-<script>
-  // Публичная ссылка на файл на Яндекс.Диске (запасной вариант)
-  const PUBLIC_KEY = 'https://disk.yandex.ru/d/-HohDmG68ja4bA';
-  const downloadBtn = document.querySelector('.download-btn');
-
-  // Устанавливаем запасную ссылку на случай ошибки
-  downloadBtn.href = PUBLIC_KEY;
-
-  // Функция для получения свежей прямой ссылки
-  async function getDirectLink() {
-    try {
-      const encodedKey = encodeURIComponent(PUBLIC_KEY);
-      const apiUrl = `https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=${encodedKey}`;
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error('Ошибка API');
-      const data = await response.json();
-      if (!data.href) throw new Error('Нет ссылки в ответе');
-      return data.href;
-    } catch (error) {
-      console.error('Не удалось получить прямую ссылку:', error);
-      return null; // при ошибке вернём null
-    }
-  }
-
-  // Обработчик клика по кнопке
-  downloadBtn.addEventListener('click', async (event) => {
-    event.preventDefault(); // Отменяем стандартный переход по ссылке
-
-    // Показываем, что что-то происходит (опционально)
-    downloadBtn.textContent = '⏳ Получаем ссылку...';
-
-    const directLink = await getDirectLink();
-    if (directLink) {
-      // Если получили прямую ссылку — переходим по ней
-      window.location.href = directLink;
-    } else {
-      // Если ошибка — переходим на запасную страницу Диска
-      window.location.href = PUBLIC_KEY;
-    }
-
-    // Восстанавливаем текст кнопки (на случай, если переход не произошёл мгновенно)
-    setTimeout(() => {
-      downloadBtn.textContent = 'Скачать на пк';
-    }, 3000);
-  });
-</script>
 </html>
