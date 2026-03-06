@@ -182,21 +182,71 @@
             color: var(--text-secondary);
             text-align: center;
         }
-        @media (max-width: 500px) {
-            .game-card {
-                padding: 25px 20px;
-            }
-            h1 {
-                font-size: 2.5rem;
-            }
-            .download-btn {
-                font-size: 1.5rem;
-                padding: 15px 20px;
-            }
-            .requirements {
-                flex-direction: column;
-            }
+    @media (max-width: 600px) {
+        body {
+            padding: 10px;
         }
+        .game-card {
+            padding: 20px 15px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+        .subhead {
+            font-size: 1rem;
+            padding-left: 15px;
+            margin-bottom: 20px;
+        }
+        .requirements {
+            flex-direction: column;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        .req-item {
+            flex: 1 1 auto;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            border-width: 1px;
+            background: rgba(20, 19, 17, 0.7);
+        }
+        .req-item strong {
+            display: inline;
+            margin-right: 5px;
+        }
+        .download-btn {
+            font-size: 1.6rem;
+            padding: 15px 20px;
+            margin: 15px 0 10px;
+        }
+        .file-info {
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+        }
+        .author {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            padding-top: 20px;
+        }
+        .author-nick {
+            align-self: flex-start;
+        }
+        .footer {
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+        body::before {
+            background-image: 
+                linear-gradient(to right, rgba(105, 82, 0, 0.3) 2px, transparent 1px),
+                linear-gradient(to bottom, rgba(105, 82, 0, 0.3) 2px, transparent 1px);
+            background-size: 30px 30px;
+            animation: moveGrid 2s linear infinite;
+        }
+        .game-card {
+            background: rgba(83, 55, 0, 0.95);
+        }
+    }
     </style>
 </head>
 <body>
