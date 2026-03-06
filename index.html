@@ -187,35 +187,9 @@
             </div>
             <div class="author-nick">Player_Vova</div>
         </div>
-
         <div class="footer">
             © 2026 — бесплатная игра
         </div>
     </div>
 </body>
-<script>
-  const PUBLIC_KEY = 'https://disk.yandex.ru/d/-HohDmG68ja4bA';
-  const downloadBtn = document.querySelector('.download-btn');
-  async function fetchDirectLink() {
-    try {
-      const encodedKey = encodeURIComponent(PUBLIC_KEY);
-      const apiUrl = `https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key=${encodedKey}`;
-      const response = await fetch(apiUrl);
-      if (!response.ok) {
-        throw new Error('Ошибка при получении ссылки');
-      }
-      const data = await response.json();
-      if (data.href) {
-        downloadBtn.href = data.href;
-        console.log('Прямая ссылка установлена');
-      } else {
-        throw new Error('Нет href в ответе');
-      }
-    } catch (error) {
-      console.error('Не удалось получить прямую ссылку:', error);
-      downloadBtn.href = PUBLIC_KEY;
-    }
-  }
-  window.addEventListener('load', fetchDirectLink);
-</script>
 </html>
