@@ -1,13 +1,15 @@
-<html lang="ru"><head>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player_Vova - ПивоМен</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #141311;
@@ -24,6 +26,9 @@
             padding: 0;
             box-sizing: border-box;
         }
+        html {
+            font-size: 100%;
+        }
         body {
             font-family: 'Shantell Sans', sans-serif;
             background-color: var(--bg-color);
@@ -32,7 +37,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 1.25rem;
             line-height: 1.5;
             position: relative;
             overflow-x: hidden;
@@ -53,63 +58,60 @@
             z-index: -1;
             animation: moveGrid 1s linear infinite;
         }
-
         @keyframes moveGrid {
             0% { background-position: 0 0; }
             100% { background-position: 40px 40px; }
         }
-
         .game-card {
-            max-width: 700px;
+            max-width: 43.75rem;
             width: 100%;
             background: var(--card-bg);
             border-radius: 0;
-            border: 4px solid var(--text-primary);
-            box-shadow: 8px 8px 0 var(--pixel-shadow);
-            padding: 40px 35px;
+            border: 0.25rem solid var(--text-primary);
+            box-shadow: 0.5rem 0.5rem 0 var(--pixel-shadow);
+            padding: 2.5rem 2.1875rem;
             transition: 0.2s;
             position: relative;
         }
         .game-card:hover {
-            box-shadow: 12px 12px 0 var(--pixel-shadow);
+            box-shadow: 0.75rem 0.75rem 0 var(--pixel-shadow);
         }
-
         h1 {
             font-size: 3.5rem;
             font-weight: 700;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 0.625rem;
             line-height: 1.1;
             word-break: break-word;
         }
         .subhead {
             font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 30px;
-            border-left: 6px solid var(--accent);
-            padding-left: 20px;
+            margin-bottom: 1.875rem;
+            border-left: 0.375rem solid var(--accent);
+            padding-left: 1.25rem;
         }
         .requirements {
-            margin: 30px 0;
+            margin: 1.875rem 0;
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 0.9375rem;
             justify-content: space-between;
         }
         .req-item {
             flex: 1 1 180px;
             background: var(--bg-color);
-            padding: 15px;
-            border: 2px solid var(--border-light);
+            padding: 0.9375rem;
+            border: 0.125rem solid var(--border-light);
             text-align: center;
             font-weight: 500;
         }
         .req-item strong {
             display: block;
             color: var(--accent);
-            margin-bottom: 5px;
+            margin-bottom: 0.3125rem;
         }
         .download-btn {
             display: inline-block;
@@ -119,31 +121,29 @@
             font-family: 'Shantell Sans', sans-serif;
             font-size: 2rem;
             font-weight: 700;
-            padding: 20px 40px;
-            border: 4px solid var(--text-primary);
-            box-shadow: 6px 6px 0 var(--pixel-shadow);
+            padding: 1.25rem 2.5rem;
+            border: 0.25rem solid var(--text-primary);
+            box-shadow: 0.375rem 0.375rem 0 var(--pixel-shadow);
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: 0.1s;
-            margin: 20px 0 15px;
+            margin: 1.25rem 0 0.9375rem;
             width: 100%;
             text-align: center;
             cursor: pointer;
         }
         .download-btn:hover {
-            font-family: 'Shantell Sans', sans-serif;
             background: var(--accent-hover);
-            box-shadow: 8px 8px 0 var(--pixel-shadow);
+            box-shadow: 0.5rem 0.5rem 0 var(--pixel-shadow);
         }
         .download-btn:active {
-            font-family: 'Shantell Sans', sans-serif;
-            transform: translate(2px, 2px);
-            box-shadow: 4px 4px 0 var(--pixel-shadow);
+            transform: translate(0.125rem, 0.125rem);
+            box-shadow: 0.25rem 0.25rem 0 var(--pixel-shadow);
         }
         .file-info {
             font-size: 0.9rem;
             color: var(--text-secondary);
-            margin-bottom: 25px;
+            margin-bottom: 1.5625rem;
             text-align: center;
         }
         .author {
@@ -151,10 +151,10 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 15px;
-            border-top: 4px dotted var(--accent);
-            padding-top: 25px;
-            margin-top: 20px;
+            gap: 0.9375rem;
+            border-top: 0.25rem dotted var(--accent);
+            padding-top: 1.5625rem;
+            margin-top: 1.25rem;
         }
         .author-name {
             font-size: 1.1rem;
@@ -165,12 +165,12 @@
         }
         .author-nick {
             background: var(--bg-color);
-            padding: 8px 25px;
-            border: 2px solid var(--border-light);
+            padding: 0.5rem 1.5625rem;
+            border: 0.125rem solid var(--border-light);
             font-weight: 500;
         }
         .footer {
-            margin-top: 25px;
+            margin-top: 1.5625rem;
             font-size: 0.9rem;
             color: var(--text-secondary);
             text-align: center;
@@ -191,19 +191,17 @@
             transition: opacity 0.3s ease, visibility 0.3s ease;
             pointer-events: none;
         }
-        
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
             pointer-events: auto;
         }
-        
         .modal-window {
             background: var(--card-bg);
-            border: 4px solid var(--text-primary);
-            box-shadow: 8px 8px 0 var(--pixel-shadow);
-            padding: 30px;
-            max-width: 400px;
+            border: 0.25rem solid var(--text-primary);
+            box-shadow: 0.5rem 0.5rem 0 var(--pixel-shadow);
+            padding: 1.875rem;
+            max-width: 25rem;
             width: 90%;
             position: relative;
             color: var(--text-primary);
@@ -211,14 +209,13 @@
             transform: scale(0.9);
             transition: transform 0.3s ease;
         }
-        
         .modal-overlay.active .modal-window {
             transform: scale(1);
         }
         .modal-close {
             position: absolute;
-            top: 10px;
-            right: 15px;
+            top: 0.625rem;
+            right: 0.9375rem;
             font-size: 2rem;
             cursor: pointer;
             color: var(--text-secondary);
@@ -229,15 +226,15 @@
         }
         .modal-title {
             font-size: 2rem;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
             color: var(--accent);
             text-align: center;
         }
         .modal-buttons {
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 0.9375rem;
+            margin-top: 1.25rem;
         }
         .modal-btn {
             display: block;
@@ -246,9 +243,9 @@
             text-decoration: none;
             font-size: 1.5rem;
             font-weight: 700;
-            padding: 15px 20px;
-            border: 3px solid var(--text-primary);
-            box-shadow: 4px 4px 0 var(--pixel-shadow);
+            padding: 0.9375rem 1.25rem;
+            border: 0.1875rem solid var(--text-primary);
+            box-shadow: 0.25rem 0.25rem 0 var(--pixel-shadow);
             text-transform: uppercase;
             text-align: center;
             transition: 0.1s;
@@ -256,18 +253,18 @@
         }
         .modal-btn:hover {
             background: var(--accent-hover);
-            box-shadow: 6px 6px 0 var(--pixel-shadow);
+            box-shadow: 0.375rem 0.375rem 0 var(--pixel-shadow);
         }
         .modal-btn:active {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0 var(--pixel-shadow);
+            transform: translate(0.125rem, 0.125rem);
+            box-shadow: 0.125rem 0.125rem 0 var(--pixel-shadow);
         }
         @media (max-width: 600px) {
             body {
-                padding: 10px;
+                padding: 0.625rem;
             }
             .game-card {
-                padding: 20px 15px;
+                padding: 1.25rem 0.9375rem;
             }
             h1 {
                 font-size: 2.5rem;
@@ -275,46 +272,46 @@
             }
             .subhead {
                 font-size: 1rem;
-                padding-left: 15px;
-                margin-bottom: 20px;
+                padding-left: 0.9375rem;
+                margin-bottom: 1.25rem;
             }
             .requirements {
                 flex-direction: column;
-                gap: 8px;
-                margin: 15px 0;
+                gap: 0.5rem;
+                margin: 0.9375rem 0;
             }
             .req-item {
                 flex: 1 1 auto;
-                padding: 10px 12px;
+                padding: 0.625rem 0.75rem;
                 font-size: 0.9rem;
-                border-width: 1px;
+                border-width: 0.0625rem;
                 background: rgba(20, 19, 17, 0.7);
             }
             .req-item strong {
                 display: inline;
-                margin-right: 5px;
+                margin-right: 0.3125rem;
             }
             .download-btn {
                 font-size: 1.6rem;
-                padding: 15px 20px;
-                margin: 15px 0 10px;
+                padding: 0.9375rem 1.25rem;
+                margin: 0.9375rem 0 0.625rem;
             }
             .file-info {
                 font-size: 0.8rem;
-                margin-bottom: 15px;
+                margin-bottom: 0.9375rem;
             }
             .author {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
-                padding-top: 20px;
+                gap: 0.625rem;
+                padding-top: 1.25rem;
             }
             .author-nick {
                 align-self: flex-start;
             }
             .footer {
                 font-size: 0.8rem;
-                margin-top: 20px;
+                margin-top: 1.25rem;
             }
             body::before {
                 background-image:
@@ -326,27 +323,22 @@
             .game-card {
                 background: rgba(83, 55, 0, 0.95);
             }
-            html, body {
-                height: 100%;
-                overflow-y: auto;
-            }
-            body {
-                padding-top: 0;
-                padding-bottom: 0;
-            }
-            .game-card {
-                margin: 10px 0;
-            }
             .modal-window {
-                padding: 20px;
+                padding: 1.25rem;
             }
             .modal-title {
                 font-size: 1.6rem;
             }
             .modal-btn {
                 font-size: 1.2rem;
-                padding: 12px;
+                padding: 0.75rem;
             }
+        }
+        body:has(.modal-overlay.active)::before {
+            animation-play-state: paused;
+        }
+        .modal-overlay.active ~ body::before {
+            animation-play-state: paused;
         }
     </style>
 </head>
@@ -355,14 +347,14 @@
         <h1>ПивоМен</h1>
         <div class="subhead">пиксельная драка в стиле Undertale</div>
         <div class="requirements">
-            <div class="req-item"><strong>ОС</strong>Windows 7+</div>
-            <div class="req-item"><strong>Поддержка</strong>Python 3.7.6 (64-bit)</div>
+            <div class="req-item"><strong>ОС</strong>Windows / macOS / Linux</div>
+            <div class="req-item"><strong>Python</strong>3.7.6+ (64-bit)</div>
             <div class="req-item"><strong>ОЗУ</strong>от 512 МБ</div>
             <div class="req-item"><strong>Место</strong>30.8 МБ</div>
             <div class="req-item"><strong>Загрузка</strong>Google Drive / Яндекс Диск</div>
         </div>
         <button class="download-btn" id="openModalBtn">Скачать на пк</button>
-        <div class="file-info">Архив game.zip • Версия 0.1.7</div>
+        <div class="file-info">Архив game.zip • 30.8 МБ</div>
         <div class="author">
             <div class="author-name">
                 <span>Соловьёв Владимир Владимирович</span> <br> разработчик
@@ -375,11 +367,11 @@
     </div>
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal-window" id="modalWindow">
-            <span class="modal-close" id="closeModalBtn">×</span>
+            <span class="modal-close" id="closeModalBtn">&times;</span>
             <div class="modal-title">Как скачать игру?</div>
             <div class="modal-buttons">
-                <a href="https://drive.google.com/uc?export=download&id=1OWKRVS-bzVXV7fUEdR6MBDzmxWgin78k" class="modal-btn" download="">Google Drive</a>
-                <a href="https://disk.yandex.ru/d/K_W3oPDOgcjuaw" class="modal-btn" target="_blank">Яндекс Диск</a>
+                <a href="https://drive.google.com/uc?export=download&id=1sOjNRvNf2lZhhy4dZj7TPldDlp242SdQ" class="modal-btn" download>Google Drive</a>
+                <a href="https://disk.yandex.ru/d/-HohDmG68ja4bA" class="modal-btn" target="_blank">Яндекс Диск</a>
             </div>
         </div>
     </div>
@@ -407,5 +399,5 @@
             }
         });
     </script>
-
-</body></html>
+</body>
+</html>
